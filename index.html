@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="educerecm_logo.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="Magvia" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="1584" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'Magvia' && password === '1584') {
+                document.cookie = "auth=true; path=/";
+                window.location.href="https://bigueti.github.io/DashboardNODE/";
+            } else {
+                alert('Usuário ou senha incorretos');
+            }
+        });
+    </script>
+</body>
+</html>
